@@ -1,6 +1,5 @@
 Collaboraid::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.assets.enabled = false
 
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -79,5 +78,6 @@ Collaboraid::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
+  config.assets.initialize_on_precompile = false
   config.assets.enabled = false
 end
