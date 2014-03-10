@@ -37,6 +37,11 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.2)
     atomic (1.1.15)
+    bcrypt (3.1.7)
+    bcrypt-ruby (3.1.5)
+      bcrypt (>= 3.1.3)
+    bootstrap-sass (3.1.1.0)
+      sass (~> 3.2)
     bson (2.2.1)
     builder (3.1.4)
     coffee-rails (4.0.0)
@@ -47,6 +52,12 @@ GEM
       execjs
     coffee-script-source (1.7.0)
     connection_pool (1.2.0)
+    devise (3.2.3)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.0.2)
     hike (1.2.3)
@@ -69,7 +80,7 @@ GEM
     multi_json (1.9.0)
     optionable (0.2.0)
     origin (2.1.0)
-    pg (0.15.1)
+    orm_adapter (0.5.0)
     polyglot (0.3.4)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -85,6 +96,7 @@ GEM
     rails_12factor (0.0.2)
       rails_serve_static_assets
       rails_stdout_logging
+    rails_layout (1.0.11)
     rails_serve_static_assets (0.0.2)
     rails_stdout_logging (0.0.3)
     railties (4.0.0)
@@ -126,17 +138,21 @@ GEM
     uglifier (2.1.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    warden (1.2.3)
+      rack (>= 1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass
+  devise
   jbuilder (= 1.0.2)
   jquery-rails (= 2.2.1)
   mongoid!
-  pg (= 0.15.1)
   rails (= 4.0.0)
   rails_12factor (= 0.0.2)
+  rails_layout
   sass-rails (= 4.0.0)
   sdoc (= 0.3.20)
   turbolinks (= 1.1.1)
