@@ -1,3 +1,22 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.main-cont{
+  .map-row{
+    height: 500px;
+    .span12{
+      height: 100%;
+    }
+  }
+}
+#map{
+  height: 100%;
+}
+.marker-title{
+  h1{
+    color: red;
+  }
+  p{
+    font-style: italic;
+  }
+}

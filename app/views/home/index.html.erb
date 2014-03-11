@@ -1,7 +1,47 @@
-<div class="container">
+<%= stylesheet_link_tag "home", media: "all", "data-turbolinks-track" => true %>
+<div class="container main-cont">
   <div class="row-fluid">
     <div class="span12">
       <h1>Welcome to CollaborAid!</h1>
     </div>
   </div>
+  <div class="row-fluid map-row">
+    <div class="span12">
+      <div id="map"></div>
+    </div>
+  </div>
 </div>
+<%= javascript_tag do %>
+  var MAP_URL = '<%= APP_CONFIG["mapbox"] %>';
+  // The GeoJSON representing the two point features
+  var geoJson = {
+      type: 'FeatureCollection',
+      features: [
+      {
+          type: 'Feature',
+          properties: {
+              title: '<h1>Washington, D.C.</h1><p>A capitol city.</p>',
+              'marker-color': '#f00',
+              'marker-size': 'large',
+          },
+          geometry: {
+              type: 'Point',
+              coordinates: [-77.03201, 38.90065]
+          }
+      },
+      {
+          type: 'Feature',
+          properties: {
+              title: '<h1>Baltimore, MD</h1><p>A place.</p>',
+              'marker-color': '#f00',
+              'marker-size': 'large',
+          },
+          geometry: {
+              type: 'Point',
+              coordinates: [-76.60767, 39.28755]
+          }
+      }
+      ]
+  };
+<% end %>
+<%= javascript_include_tag "home", "data-turbolinks-track" => true %>
