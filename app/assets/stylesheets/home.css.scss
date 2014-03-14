@@ -16,8 +16,18 @@
   h1{
     color: red;
   }
+}
+.marker-description{
   p{
     font-style: italic;
+  }
+  a, a:hover, a:visited, a:active{
+    text-decoration: none;
+    background-color: transparent;
+    color: #d22;
+  }
+  a:hover{
+    color: #f44;
   }
 }
 

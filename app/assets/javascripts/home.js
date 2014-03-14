@@ -3,5 +3,5 @@
 $(document).ready(function(){
   var map = L.mapbox.map('map', MAP_URL).setView([34.7, 38.0], 6);
   // Pass features and a custom factory function to the map
-  map.featureLayer.setGeoJSON(geoJson);
+  L.mapbox.markerLayer(geoJson, {sanitizer: function(s){return s}}).addTo(map);
 });

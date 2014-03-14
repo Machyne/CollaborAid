@@ -21,7 +21,8 @@
       <%= i==0 ? '' : ','%>{
           type: 'Feature',
           properties: {
-              title: '<h1><%= proj.name %></h1><p><%= proj.description %></p>',
+              title: '<h1><%= proj.name %></h1>',
+              description: '<p><%= proj.description %></p><%= link_to 'Details', proj %>',
               'marker-color': '#f00',
               'marker-size': 'large',
           },
