@@ -1,3 +1,21 @@
 // Place all the styles related to the projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#show-project-cont{
+  h1{
+    font-size: 24px;
+    font-weight: bolder;
+    text-decoration: underline;
+    padding: 0;
+  }
+  h2{
+    margin: 10px 0;
+    padding: 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  p{
+    margin: 10px 0;
+    padding: 0;
+  }
+}
