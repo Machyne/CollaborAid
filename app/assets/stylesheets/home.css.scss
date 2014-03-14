@@ -1,7 +1,7 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.main-cont{
+#index-cont{
   .map-row{
     height: 500px;
     .span12{
@@ -18,5 +18,14 @@
   }
   p{
     font-style: italic;
+  }
+}
+
+#about-cont{
+  h1{
+    text-decoration: underline;
+  }
+  h2{
+    font-size: 22px;
   }
 }

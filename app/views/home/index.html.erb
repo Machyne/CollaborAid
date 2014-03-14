@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag "home", media: "all", "data-turbolinks-track" => true %>
-<div class="container main-cont">
+<div class="container" id="index-cont">
   <div class="row-fluid">
     <div class="span12">
       <h1>Welcome to CollaborAid!</h1>
@@ -17,30 +17,20 @@
   var geoJson = {
       type: 'FeatureCollection',
       features: [
-      {
+      <% @projects.to_enum.with_index.each do |proj, i| %>
+      <%= i==0 ? '' : ','%>{
           type: 'Feature',
           properties: {
-              title: '<h1>Washington, D.C.</h1><p>A capitol city.</p>',
+              title: '<h1><%= proj.name %></h1><p><%= proj.description %></p>',
               'marker-color': '#f00',
               'marker-size': 'large',
           },
           geometry: {
               type: 'Point',
-              coordinates: [-77.03201, 38.90065]
-          }
-      },
-      {
-          type: 'Feature',
-          properties: {
-              title: '<h1>Baltimore, MD</h1><p>A place.</p>',
-              'marker-color': '#f00',
-              'marker-size': 'large',
-          },
-          geometry: {
-              type: 'Point',
-              coordinates: [-76.60767, 39.28755]
+              coordinates: <%= proj.location %>
           }
       }
+      <% end %>
       ]
   };
 <% end %>
