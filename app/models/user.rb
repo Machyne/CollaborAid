@@ -35,6 +35,6 @@ class User
   # field :locked_at,       :type => Time
 
   def is_admin?
-    false
+    true
   end
 end

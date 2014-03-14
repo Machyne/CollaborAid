@@ -68,11 +68,12 @@ Collaboraid::Application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :address => 'smtpout.secureserver.net',
-    :domain  => 'www.collaboraid.org',
+    :domain => "secureserver.net",
     :port      => 80,
     :user_name => 'info@collaboraid.org',
     :password => 'Aidteam6!',
-    :authentication => :plain
+    :authentication => 'plain',
+    :enable_starttls_auto => true
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to

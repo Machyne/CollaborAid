@@ -5,7 +5,7 @@
     <tr>      
       <th>Name</th>
       <th>Details</th>
-      <% if current_user && current_user.is_admin %>
+      <% if current_user && current_user.is_admin? %>
         <th>Edit</th>
         <th>Remove</th>
       <% end %>
@@ -17,7 +17,7 @@
       <tr>
         <td><%= project.name %></td>
         <td><%= link_to 'Show', project %></td>
-        <% if current_user && current_user.is_admin %>
+        <% if current_user && current_user.is_admin? %>
           <td><%= link_to 'Edit', edit_project_path(project) %></td>
           <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
@@ -27,4 +27,6 @@
 </table>
 
 <br>
-<!-- <%= link_to 'New Project', new_project_path %> -->
+<% if current_user && current_user.is_admin? %>
+  <%= link_to 'New Project', new_project_path %>
+<% end %>

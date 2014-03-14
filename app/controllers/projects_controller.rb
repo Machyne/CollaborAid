@@ -41,7 +41,7 @@ class ProjectsController < ApplicationController
   # PATCH/PUT /projects/1.json
   def update
     respond_to do |format|
-      if @project.update(project_params)
+      if @project.update project_params
         format.html { redirect_to @project, notice: 'Project was successfully updated.' }
         format.json { head :no_content }
       else
@@ -69,6 +69,12 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params[:project]
+      pp = params.require(:project).permit :name, :description, :psector, :asectors, :oversee, :bens, :funders, :location, :initdate
+      pp[:bens] = pp[:bens].gsub(/\[|\]|\s|\"/, '').split ','
+      pp[:asectors] = pp[:asectors].gsub(/\[|\]|\s|\"/, '').split ','
+      pp[:funders] = pp[:funders].gsub(/\[|\]|\s|\"/, '').split ','
+      pp[:location] = pp[:location].gsub(/\[|\]|\s|\"/, '').split(',').map &:to_f
+      pp[:initdate] = Date.parse(pp[:initdate])
+      pp
     end
 end

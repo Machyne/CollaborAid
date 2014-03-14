@@ -1,4 +1,4 @@
-<%= form_for(@project) do |f| %>
+<%= form_for @project, html: {class: 'container', id: 'edit-project-cont'} do |f| %>
   <% if @project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
@@ -10,8 +10,27 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
+  <div class="row">
+    <div class="col-md-12">
+      <%= f.label :name, "Project Name" %>
+      <%= f.text_field :name, :required => true %><br/>
+      <%= f.label :description %>
+      <%= f.text_area :description, :required => true %><br/>
+      <%= f.label :psector, "Primary Sector" %>
+      <%= f.text_field :psector, :required => true %><br/>
+      <%= f.label :asectors, "Additional Sectors" %>
+      <%= f.text_field :asectors, :required => true %><br/>
+      <%= f.label :oversee, "Overseeing Organization" %>
+      <%= f.text_field :oversee, :required => true %><br/>
+      <%= f.label :bens, "Primary Beneficiaries" %>
+      <%= f.text_field :bens, :required => true %><br/>
+      <%= f.label :funders, "Funding Affiliations" %>
+      <%= f.text_field :funders, :required => true %><br/>
+      <%= f.label :location %>
+      <%= f.text_field :location, :required => true %><br/>
+      <%= f.label :initdate, "Start Date" %>
+      <%= f.text_field :initdate, :required => true %><br/>
+      <%= f.submit %>
+    </div>
   </div>
 <% end %>
