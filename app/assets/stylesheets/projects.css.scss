@@ -2,20 +2,67 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #show-project-cont{
-  h1{
-    font-size: 24px;
-    font-weight: bolder;
-    text-decoration: underline;
+  .row{
+    margin-bottom: 15px;
+  }
+  h1, h2{
+    text-decoration: none;
+    font-size: 27pt;
+    line-height: 1;
+    margin: 1em 0;
     padding: 0;
+    color: #632423;
+    display: block;
+    font-weight: 900;
+  }
+  h1{
+    text-decoration: underline;
+    &:before{
+      content: '\00201C';
+    }
+    &:after{
+      content: '\00201D';
+    }
   }
   h2{
-    margin: 10px 0;
-    padding: 0;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 12pt;
+  }
+  .bump{
+    margin: 0;
+    padding-left: 25px;
+    display: block;
   }
   p{
-    margin: 10px 0;
+    font-size: 11pt;
+    color: #595959;
+    margin: 1em 0;
     padding: 0;
+    display: block;
+    max-width: 35em;
+    line-height: 1.4;
+  }
+  a{
+    color: #1C38FF;
+    text-decoration: none;
+    font-style: italic;
+    &:visited{
+      text-decoration: none;
+      color: #1C38FF;
+    }
+    &:active{
+      text-decoration: none;
+      color: #1C38FF;
+    }
+    &:hover{
+      text-decoration: none;
+      color: #632423;
+      background-color: #eee;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  #show-project-cont h2{
+    text-align: right;
   }
 }

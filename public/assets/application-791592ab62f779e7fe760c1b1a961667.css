@@ -1,16 +1,3 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
-
-
- */
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -5044,37 +5031,130 @@ main {
 section {
   margin-top: 20px; }
 #map {
-  height: 500px; }
+  height: 512px; }
+  #map .marker-title h1 {
+    font-size: 12pt;
+    margin: .5em 0;
+    padding: 0;
+    font-style: italic;
+    font-weight: 900;
+    text-decoration: underline;
+    color: #632423; }
+    #map .marker-title h1:before {
+      content: '\00201C'; }
+    #map .marker-title h1:after {
+      content: '\00201D'; }
+  #map .marker-description p {
+    font-size: 10pt; }
+    #map .marker-description p strong {
+      display: block; }
+    #map .marker-description p span {
+      display: inline-block;
+      padding-left: 15px; }
+  #map .marker-description small {
+    display: block;
+    width: 100%;
+    font-size: 10pt;
+    text-align: right;
+    font-style: normal; }
+    #map .marker-description small a {
+      color: #0AB0F0;
+      font-weight: 700;
+      text-decoration: underline; }
+      #map .marker-description small a:visited {
+        text-decoration: underline;
+        color: #0AB0F0; }
+      #map .marker-description small a:active {
+        text-decoration: underline;
+        color: #0AB0F0; }
+      #map .marker-description small a:hover {
+        text-decoration: underline;
+        color: #632423;
+        background-color: #fff; }
 
-.marker-title h1 {
-  color: red; }
-
-.marker-description p {
-  font-style: italic; }
-.marker-description a, .marker-description a:hover, .marker-description a:visited, .marker-description a:active {
+#home-cont h1, #home-cont h2 {
   text-decoration: none;
-  background-color: transparent;
-  color: #d22; }
-.marker-description a:hover {
-  color: #f44; }
-
-#about-cont h1 {
-  text-decoration: underline; }
-#about-cont h2 {
-  font-size: 22px; }
-#show-project-cont h1 {
-  font-size: 24px;
-  font-weight: bolder;
-  text-decoration: underline;
-  padding: 0; }
-#show-project-cont h2 {
-  margin: 10px 0;
+  font-size: 24pt;
+  line-height: 1;
+  margin: 1em 0;
   padding: 0;
-  font-size: 18px;
-  font-weight: bold; }
+  color: #632423;
+  display: block;
+  font-weight: 900; }
+#home-cont h2 {
+  margin: .2em 0;
+  font-size: 20pt; }
+#home-cont p {
+  font-size: 12pt;
+  color: #595959;
+  margin: 1em 0;
+  padding: 0;
+  display: block;
+  max-width: 35em;
+  line-height: 1.4; }
+#home-cont p a {
+  color: #1C38FF;
+  text-decoration: none;
+  font-style: italic; }
+  #home-cont p a:visited {
+    text-decoration: none;
+    color: #1C38FF; }
+  #home-cont p a:active {
+    text-decoration: none;
+    color: #1C38FF; }
+  #home-cont p a:hover {
+    text-decoration: none;
+    color: #632423;
+    background-color: #eee; }
+#show-project-cont .row {
+  margin-bottom: 15px; }
+#show-project-cont h1, #show-project-cont h2 {
+  text-decoration: none;
+  font-size: 27pt;
+  line-height: 1;
+  margin: 1em 0;
+  padding: 0;
+  color: #632423;
+  display: block;
+  font-weight: 900; }
+#show-project-cont h1 {
+  text-decoration: underline; }
+  #show-project-cont h1:before {
+    content: '\00201C'; }
+  #show-project-cont h1:after {
+    content: '\00201D'; }
+#show-project-cont h2 {
+  font-size: 12pt; }
+#show-project-cont .bump {
+  margin: 0;
+  padding-left: 25px;
+  display: block; }
 #show-project-cont p {
-  margin: 10px 0;
-  padding: 0; }
+  font-size: 11pt;
+  color: #595959;
+  margin: 1em 0;
+  padding: 0;
+  display: block;
+  max-width: 35em;
+  line-height: 1.4; }
+#show-project-cont a {
+  color: #1C38FF;
+  text-decoration: none;
+  font-style: italic; }
+  #show-project-cont a:visited {
+    text-decoration: none;
+    color: #1C38FF; }
+  #show-project-cont a:active {
+    text-decoration: none;
+    color: #1C38FF; }
+  #show-project-cont a:hover {
+    text-decoration: none;
+    color: #632423;
+    background-color: #eee; }
+
+@media (min-width: 1200px) {
+  #show-project-cont h2 {
+    text-align: right; } }
 body {
   background-color: #fff;
   color: #333;
@@ -5130,3 +5210,24 @@ div.field, div.actions {
   #error_explanation ul li {
     font-size: 12px;
     list-style: square; }
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+html, .body {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100% !important;
+  background-color: #eee !important; }
+
+* {
+  font-family: "Helvetica Neue", helvetica, sans-serif !important; }

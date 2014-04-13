@@ -14,6 +14,10 @@
     <div class="col-md-12">
       <%= f.label :name, "Project Name" %>
       <%= f.text_field :name, :required => true %><br/>
+      <%= f.label :cname, "Contact Name" %>
+      <%= f.text_field :cname, :required => true %><br/>
+      <%= f.label :cemail, "Contact Email" %>
+      <%= f.text_field :cemail, :required => true %><br/>
       <%= f.label :description %>
       <%= f.text_area :description, :required => true %><br/>
       <%= f.label :psector, "Primary Sector" %>
@@ -28,8 +32,12 @@
       <%= f.text_field :funders, :required => true %><br/>
       <%= f.label :location %>
       <%= f.text_field :location, :required => true %><br/>
+      <%= f.label :locname, "Name of Location" %>
+      <%= f.text_field :locname, :required => true %><br/>
       <%= f.label :initdate, "Start Date" %>
       <%= f.text_field :initdate, :required => true %><br/>
+      <%= f.label :enddate, "Expected Completion Date" %>
+      <%= f.text_field :enddate, :required => true %><br/>
       <%= f.submit %>
     </div>
   </div>

@@ -4,6 +4,12 @@ class Project
   #SEARCH 
   #Project Name
   field :name
+  #Project Contact Name
+  field :cname
+  #Project Contact Email
+  field :cemail
+  #Project Location Name
+  field :locname
   #Location for Map
   field :location, :type => Array  # [lat,lng]
   index( { location: Mongo::GEO2D }, { min: -180, max: 180 })
@@ -21,8 +27,10 @@ class Project
   #NO SEARCH
   #Description of Project
   field :description
-  #Initiation Date
+  #Start Date
   field :initdate, :type => Date
+  #End Date
+  field :enddate, :type => Date
   #Funding Affiliation
   field :funders, :type => Array
 end

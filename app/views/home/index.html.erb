@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag "home", media: "all", "data-turbolinks-track" => true %>
-<div class="container" id="index-cont">
+<div class="container" id="home-cont">
   <div class="row">
     <div class="col-md-12">
       <h1>Welcome to CollaborAid!</h1>
@@ -22,7 +22,17 @@
           type: 'Feature',
           properties: {
               title: '<h1><%= proj.name %></h1>',
-              description: '<p><%= proj.description %></p><%= link_to 'Details', proj %>',
+              description:  '<p>'+
+                              '<strong>Implementing Organization:</strong>'+
+                              '<span><%= proj.oversee %></span>'+
+                              '<strong>Primary Beneficiaries:</strong>'+
+                              '<span><%= proj.bens.join ", " %></span>'+
+                              '<strong>Sectors:</strong>'+
+                              '<span><%= ([proj.psector]+proj.asectors).join ", " %></span>'+
+                              '<strong>Description:</strong>'+
+                              '<span><%= proj.description %></span>'+
+                            '</p>'+
+                            '<small>Click <%= link_to 'here', proj %> to see more</small>',
               'marker-color': '#f00',
               'marker-size': 'large',
           },
