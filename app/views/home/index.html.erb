@@ -24,13 +24,13 @@
               title: '<h1><%= proj.name %></h1>',
               description:  '<p>'+
                               '<strong>Implementing Organization:</strong>'+
-                              '<span><%= proj.oversee %></span>'+
+                              '<span><%= j proj.oversee %></span>'+
                               '<strong>Primary Beneficiaries:</strong>'+
-                              '<span><%= proj.bens.join ", " %></span>'+
+                              '<span><%= j proj.bens.join(", ") %></span>'+
                               '<strong>Sectors:</strong>'+
-                              '<span><%= ([proj.psector]+proj.asectors).join ", " %></span>'+
+                              '<span><%= j ([proj.psector]+proj.asectors).join(", ") %></span>'+
                               '<strong>Description:</strong>'+
-                              '<span><%= proj.description %></span>'+
+                              '<span><%= j proj.description %></span>'+
                             '</p>'+
                             '<small>Click <%= link_to 'here', proj %> to see more</small>',
               'marker-color': '#f00',
