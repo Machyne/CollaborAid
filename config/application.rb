@@ -3,6 +3,7 @@ require File.expand_path('../boot', __FILE__)
 require "rails"
 
 %w(
+  sprockets
   action_controller
   action_mailer
   active_resource

@@ -4,7 +4,7 @@ ruby '2.0.0'
 gem 'mongo'
 gem 'rails', '4.0.0'
 
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.1.1'
 gem 'devise'
 gem 'sass-rails', '4.0.0'
 gem 'uglifier', '2.1.1'

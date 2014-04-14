@@ -23,6 +23,7 @@ Collaboraid::Application.configure do
   config.serve_static_assets = false
 
   # Compress JavaScripts and CSS.
+  config.assets.compress = true
   config.assets.js_compressor = :uglifier
   config.assets.css_compressor = :sass
 
@@ -89,5 +90,5 @@ Collaboraid::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.assets.enabled = false
+  config.assets.enabled = true
 end

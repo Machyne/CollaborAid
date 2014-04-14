@@ -10,36 +10,29 @@ img {
 .navbar-brand {
   font-size: inherit;
   }
-
-// THESE ARE EXAMPLES YOU CAN MODIFY
-// create your own classes
-// to make views framework-neutral
-.column {
-  @extend .col-md-6;
-  @extend .text-center;
-  }
-.form {
-  @extend .col-md-6;
-  }
-.form-centered {
-  @extend .col-md-6;
-  @extend .text-center;
-  }
-.submit {
-  @extend .btn;
-  @extend .btn-primary;
-  @extend .btn-lg;
+.checkbox {
+  margin-top: 3px;
+  margin-bottom: 3px;
   }
 // apply styles to HTML elements
 // to make views framework-neutral
 main {
   @extend .container;
   background-color: #eee;
-  padding-bottom: 80px;
+  padding-bottom: 60px;
   width: 100%;
   margin-top: 51px; // accommodate the navbar
   }
 section {
   @extend .row;
   margin-top: 20px;
+  }
+html, .body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #eee;
+  }
+*{
+  font-family: "Helvetica Neue", helvetica, sans-serif;
   }

@@ -1,8 +1,43 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#searchbar{
+  z-index: 9;
+  background-color: #fff;
+  border: solid 1px #ccc;
+  box-shadow: 10px 10px 20px #444;
+  position: absolute;
+  top: 10px;
+  left: 50px;
+  margin: 0;
+  padding: 1em;
+  max-width: 400px;
+  a{
+    float: right;
+    padding: 2px 1em;
+    margin-bottom: -9px;
+    color: #00ADEF;
+    text-decoration: none;
+    font-weight: 700;
+    text-shadow: 1px 1px 1px #ccc;
+    &:visited{
+      text-decoration: none;
+      color: #00ADEF;
+    }
+    &:active{
+      text-decoration: none;
+      color: #00ADEF;
+    }
+    &:hover{
+      text-decoration: none;
+      color: #632423;
+      background-color: #fff;
+    }
+  }
+}
 #map{
-  height: 512px;
+  position: relative;
+  height: 532px;
   .marker-title{
     h1{
       font-size: 12pt;
@@ -101,4 +136,8 @@
       background-color: #eee;
     }
   }
+}
+#map #searchbar h2{
+  font-size: 16pt;
+  margin-bottom: 2px;
 }
