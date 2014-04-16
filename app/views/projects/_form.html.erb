@@ -1,4 +1,4 @@
-<%= form_for @project, html: {class: 'container', id: 'edit-project-cont'} do |f| %>
+<%= form_for @project, html: {class: 'container', id: 'projects-cont'} do |f| %>
   <% if @project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
@@ -20,10 +20,8 @@
       <%= f.text_field :cemail, :required => true %><br/>
       <%= f.label :description %>
       <%= f.text_area :description, :required => true %><br/>
-      <%= f.label :psector, "Primary Sector" %>
-      <%= f.text_field :psector, :required => true %><br/>
-      <%= f.label :asectors, "Additional Sectors" %>
-      <%= f.text_field :asectors, :required => true %><br/>
+      <%= f.label :sectors, "Project Sectors" %>
+      <%= f.text_field :sectors, :required => true %><br/>
       <%= f.label :oversee, "Overseeing Organization" %>
       <%= f.text_field :oversee, :required => true %><br/>
       <%= f.label :bens, "Primary Beneficiaries" %>

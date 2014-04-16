@@ -1,4 +1,4 @@
-<div class="container" id="show-project-cont">
+<div class="container" id="projects-cont">
   <div class="row">
     <div class="col-md-12">
       <h1><%= @project.name %></h1>
@@ -36,7 +36,7 @@
       <h2>Project Sectors:</h2>
     </div>
     <div class="col-xs-12 col-sm-10 col-md-8 col-lg-5">
-      <p><%= ([@project.psector]+@project.asectors).join ", " %></p>
+      <p><%= @project.sectors.join ", " %></p>
     </div>
   </div>
   <div class="row">
@@ -77,6 +77,19 @@
     </div>
     <div class="col-xs-12 col-sm-10 col-md-8 col-lg-5">
       <p><%= @project.locname %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-2">
+      <%= link_to 'Home', root_path %>
+    </div>
+    <% if current_user && current_user.is_admin? %>
+      <div class="col-xs-12 col-sm-2">
+        <%= link_to 'Edit', edit_project_path %>
+      </div>
+    <% end %>
+    <div class="col-xs-12 col-sm-2">
+      <%= link_to 'Show All Projects', projects_path %>
     </div>
   </div>
 </div>

@@ -5,4 +5,5 @@ Collaboraid::Application.routes.draw do
   get 'about', to: 'home#about'
   get 'contact', to: 'home#contact'
   get 'addproject', to: 'home#addproject'
+  get 'search', to: 'projects#search'
 end

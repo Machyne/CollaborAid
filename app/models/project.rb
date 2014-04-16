@@ -15,10 +15,8 @@ class Project
   index( { location: Mongo::GEO2D }, { min: -180, max: 180 })
   #USAGE: Project.within_circle( location: [ center, radious ] )
   #   or  Project.geo_near(center).max_distance(radious)
-  #Primary Sector
-  field :psector
-  #Additional Sectors
-  field :asectors, :type => Array
+  #Sectors
+  field :sectors, :type => Array
   #Overseeing Organization
   field :oversee
   #Primary Beneficiaries
@@ -33,4 +31,30 @@ class Project
   field :enddate, :type => Date
   #Funding Affiliation
   field :funders, :type => Array
+
+  def to_mapbox
+    dscrp = '<p><strong>Implementing Organization:</strong><span>' +
+            self.oversee +
+            '</span><strong>Primary Beneficiaries:</strong><span>' +
+            self.bens.join(", ") +
+            '</span><strong>Sectors:</strong><span>' +
+            self.sectors.join(", ") +
+            '</span><strong>Description:</strong><span>' +
+            self.description +
+            '</span></p><small>Click <a href="/projects/' +
+            self.id + '">here</a> to see more</small>'
+    return {
+      type: 'Feature',
+      properties: {
+          title: '<h1>'+self.name+'</h1>',
+          :'marker-color' => '#f00',
+          :'marker_size' => 'large',
+          description: dscrp
+      },
+      geometry: {
+          type: 'Point',
+          coordinates: self.location
+      }
+    }
+  end
 end
