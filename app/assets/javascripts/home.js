@@ -14,6 +14,28 @@ $(document).ready(function(){
     };
   });
 
+  function myCancelBubble(evnt){
+    evnt.stopPropagation();
+    evnt.preventDefault();
+    var evt=window.event;
+    if('event' in window) evt=evt||event;
+    if(typeof evt !== 'undefined'){
+      if(evt.stopPropagation) evt.stopPropagation();
+      evt.cancelBubble=true;
+    };
+    return false;
+  };
+
+  // $('#searchbar').click(function(evnt){
+  //   return myCancelBubble(evnt);
+  // });
+  $('#searchbar').dblclick(function(evnt){
+    return myCancelBubble(evnt);
+  });
+  // $('#searchbar').on('scroll', function(evnt){
+  //   return myCancelBubble(evnt);
+  // });
+
   $('#clearS').click(function(){
     $('#check-sector').find(':checked').each(function() {
        $(this).removeAttr('checked');
