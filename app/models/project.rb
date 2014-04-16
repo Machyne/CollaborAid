@@ -25,6 +25,7 @@ class Project
   #NO SEARCH
   #Description of Project
   field :description
+  field :descripts
   #Start Date
   field :initdate, :type => Date
   #End Date
@@ -40,7 +41,7 @@ class Project
             '</span><strong>Sectors:</strong><span>' +
             self.sectors.join(", ") +
             '</span><strong>Description:</strong><span>' +
-            self.description +
+            self.descripts +
             '</span></p><small>Click <a href="/projects/' +
             self.id + '">here</a> to see more</small>'
     return {

@@ -94,7 +94,7 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      pp = params.require(:project).permit :name, :cname, :cemail, :description, :sectors, :oversee, :bens, :funders, :location, :locname, :initdate, :enddate
+      pp = params.require(:project).permit :name, :cname, :cemail, :descripts, :description, :sectors, :oversee, :bens, :funders, :location, :locname, :initdate, :enddate
       pp[:bens] = pp[:bens].gsub(/\[|\]|\s|\"/, '').split ','
       pp[:sectors] = pp[:sectors].gsub(/\[|\]|\s|\"/, '').split ','
       pp[:funders] = pp[:funders].gsub(/\[|\]|\s|\"/, '').split ','

@@ -18,21 +18,18 @@ $(document).ready(function(){
     $('#check-sector').find(':checked').each(function() {
        $(this).removeAttr('checked');
     });
+    updateMap();
   });
 
   $('#clearB').click(function(){
     $('#check-bens').find(':checked').each(function() {
        $(this).removeAttr('checked');
     });
+    updateMap();
   });
 
-  $('form[name=filter]').submit(function(){
+  function updateMap(){
     formData = $('form[name=filter]').serializeArray();
-    var sh = $('#showhide').get(0);
-    if (sh.innerHTML.trim()!='More...'){
-      sh.innerHTML='More...';
-      $('#fullform').collapse("toggle");
-    };
     $.get("/search", formData).done(function(projs) {
       var geoJson = {
         type: 'FeatureCollection',
@@ -40,6 +37,17 @@ $(document).ready(function(){
       };
       ML.setGeoJSON(geoJson);
     });
+  }
+
+  $('form[name=filter]').submit(function(){
+    var sh = $('#showhide').get(0);
+    if (sh.innerHTML.trim()!='More...'){
+      sh.innerHTML='More...';
+      $('#fullform').collapse("toggle");
+    };
+    updateMap();
     return false;
   });
+
+  $('form[name=filter] input[type=checkbox]').click(updateMap);
 });

@@ -9,12 +9,13 @@
     <div class="col-xs-12 col-sm-4">
       <%= link_to project do %>
         <h2 style="display:inline-block"><%= project.name %></h2>
-        <span style="width:2em;display:inline-block"></span>Show
+        <span style="width:2em;display:inline-block"></span>Details
       <% end %>
       <% if current_user && current_user.is_admin? %>
         &bull; <%= link_to 'Edit', edit_project_path(project) %> &bull;
         <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
+      <br><%= project.descripts %>
     </div>
   </div>
   <% end %>
