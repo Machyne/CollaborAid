@@ -42,6 +42,9 @@
 #map{
   position: relative;
   height: 580px;
+  img.leaflet-marker-icon{
+    cursor: pointer;
+  }
   .marker-title{
     h1{
       font-size: 12pt;
