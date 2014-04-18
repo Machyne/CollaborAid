@@ -50,7 +50,14 @@ class Project
           title: '<h1>'+self.name+'</h1>',
           :'marker-color' => '#f00',
           :'marker_size' => 'large',
-          description: dscrp
+          description: dscrp,
+          icon: {
+            iconUrl: "/assets/#{self.sectors[0]}.png",
+            iconSize: [30, 30],
+            iconAnchor: [15, 15],
+            popupAnchor: [-30, -30],
+            className: "dot"
+          }
       },
       geometry: {
           type: 'Point',

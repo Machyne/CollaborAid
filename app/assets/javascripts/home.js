@@ -4,6 +4,13 @@ $(document).ready(function(){
   var map = L.mapbox.map('map', MAP_URL).setView([36.569095, 36.259985], 10);
   // Pass features and a custom factory function to the map
   var ML = L.mapbox.markerLayer(geoJson, {sanitizer: function(s){return s}}).addTo(map);
+  ML.on('layeradd', function(e) {
+    var marker = e.layer;
+    var feature = marker.feature;
+    marker.setIcon(L.icon(feature.properties.icon));
+  });
+  ML.addTo(map);
+  ML.setGeoJSON(geoJson);
 
   $('#showhide').click(function(){
     $('#fullform').collapse("toggle");
