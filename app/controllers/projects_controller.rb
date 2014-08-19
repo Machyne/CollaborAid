@@ -24,7 +24,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/new
   def new
-    unless current_user && current_user.is_admin?
+    unless current_user && current_user.is_admin
       redirect_to root_path, flash: {error: 'Sorry, only the site administrator can view that page.'}
     end
     @project = Project.new
@@ -32,7 +32,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
-    unless current_user && current_user.is_admin?
+    unless current_user && current_user.is_admin
       redirect_to root_path, flash: {error: 'Sorry, only the site administrator can view that page.'}
     end
   end
@@ -40,7 +40,7 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-    unless current_user && current_user.is_admin?
+    unless current_user && current_user.is_admin
       redirect_to root_path, flash: {error: 'Sorry, only the site administrator can view that page.'}
     end
     @project = Project.new(project_params)
@@ -59,7 +59,7 @@ class ProjectsController < ApplicationController
   # PATCH/PUT /projects/1
   # PATCH/PUT /projects/1.json
   def update
-    unless current_user && current_user.is_admin?
+    unless current_user && current_user.is_admin
       redirect_to root_path, flash: {error: 'Sorry, only the site administrator can view that page.'}
     end
     respond_to do |format|
@@ -76,7 +76,7 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1
   # DELETE /projects/1.json
   def destroy
-    unless current_user && current_user.is_admin?
+    unless current_user && current_user.is_admin
       redirect_to root_path, flash: {error: 'Sorry, only the site administrator can view that page.'}
     end
     @project.destroy
